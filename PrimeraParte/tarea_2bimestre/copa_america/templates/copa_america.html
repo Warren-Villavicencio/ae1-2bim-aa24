@@ -1,0 +1,55 @@
+
+
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+  <head>
+    <title>Copa América</title>
+    <style>
+      body {
+        background-image: url('{% static "home-bg.jpg" %}');
+        background-size: cover;
+        color: #fff;
+        font-family: Arial, sans-serif;
+      }
+      h2 {
+        text-align: center;
+        color: #ff9800;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      li {
+        margin-bottom: 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 10px;
+        border-radius: 5px;
+      }
+      strong {
+        color: #ff9800;
+      }
+    </style>
+  </head>
+<body>
+
+    <h2>Copa América</h2>
+    <p>Tarea realizada por: Warren Antonio Villavicencio Merino 2024.</p>
+    <ul>
+        {% for copa_america in copas_america %}
+            <li>
+                <strong>Año:</strong> {{ copa_america.anio }}<br>
+                <strong>Sede:</strong> {{ copa_america.sede }}<br>
+                <strong>Campeón:</strong> {{ copa_america.campeon }}<br>
+                <strong>Subcampeón:</strong> {{ copa_america.subcampeon }}<br>
+                <strong>Goleador:</strong> {{ copa_america.goleador }}<br>
+                <strong>Partidos jugados:</strong> {{ copa_america.partidos_jugados }}<br>
+                <strong>Goles marcados:</strong> {{ copa_america.goles_marcados }}<br>
+            </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
