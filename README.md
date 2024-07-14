@@ -1,6 +1,6 @@
 # ae1-2bim-aa24
 
-la primera aplicación se desarrollo en django como framework haciendo alusión a la Copa América en la cuál se puede ver la sede los campeones, subcampeones de dicha competencia.
+La primera aplicación se desarrollo en django como framework haciendo alusión a la Copa América en la cuál se puede ver la sede los campeones, subcampeones de dicha competencia.
 
 Para ejecutarla hay que tener instalado el framework de Django
 
