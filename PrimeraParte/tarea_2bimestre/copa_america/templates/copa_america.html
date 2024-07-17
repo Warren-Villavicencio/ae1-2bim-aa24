@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 {% load static %}
 
@@ -31,25 +29,82 @@
       strong {
         color: #ff9800;
       }
+      nav {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .menu-button {
+        background-color: #ff9800;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        margin: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      .menu-button:hover {
+        background-color: #e68900;
+      }
     </style>
+
+    <script>
+      function showContent(contentId) {
+        
+        document.getElementById('home').style.display = 'none';
+        document.getElementById('historia').style.display = 'none';
+        document.getElementById('estadisticas').style.display = 'none';
+
+       
+        document.getElementById(contentId).style.display = 'block';
+      }
+    </script>
   </head>
-<body>
+  <body>
 
-    <h2>Copa América</h2>
-    <p>Tarea realizada por: Warren Antonio Villavicencio Merino 2024.</p>
-    <ul>
+   
+    <div id="home">
+      <h2>Bienvenido a la Copa América</h2>
+
+
+      <p>Tarea desarrollada por: Warren Antonio Villavicencio Merino.</p>
+
+
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Y9hZYI9iL-k?si=OKcAa5XrkPRYRDzU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <p>Selecciona una opción del menú para ver más detalles.</p>
+    </div>
+ 
+    <nav>
+      <button class="menu-button" onclick="showContent('home')">Home</button>
+      <button class="menu-button" onclick="showContent('estadisticas')">Estadísticas</button>
+      <button class="menu-button" onclick="showContent('historia')">Historia</button>
+    </nav>
+
+    
+    <div id="estadisticas" style="display: none;">
+      <h2>Estadísticas de la Copa América</h2>
+      <p>Tarea realizada por: Warren Antonio Villavicencio Merino 2024.</p>
+      <ul>
         {% for copa_america in copas_america %}
-            <li>
-                <strong>Año:</strong> {{ copa_america.anio }}<br>
-                <strong>Sede:</strong> {{ copa_america.sede }}<br>
-                <strong>Campeón:</strong> {{ copa_america.campeon }}<br>
-                <strong>Subcampeón:</strong> {{ copa_america.subcampeon }}<br>
-                <strong>Goleador:</strong> {{ copa_america.goleador }}<br>
-                <strong>Partidos jugados:</strong> {{ copa_america.partidos_jugados }}<br>
-                <strong>Goles marcados:</strong> {{ copa_america.goles_marcados }}<br>
-            </li>
+          <li>
+            <strong>Año:</strong> {{ copa_america.anio }}<br>
+            <strong>Sede:</strong> {{ copa_america.sede }}<br>
+            <strong>Campeón:</strong> {{ copa_america.campeon }}<br>
+            <strong>Subcampeón:</strong> {{ copa_america.subcampeon }}<br>
+            <strong>Goleador:</strong> {{ copa_america.goleador }}<br>
+            <strong>Partidos jugados:</strong> {{ copa_america.partidos_jugados }}<br>
+            <strong>Goles marcados:</strong> {{ copa_america.goles_marcados }}<br>
+          </li>
         {% endfor %}
-    </ul>
+      </ul>
+    </div>
 
-</body>
+ 
+    <div id="historia" style="display: none;">
+      <h2>Historia de la Copa América</h2>
+      <p>La Copa América, oficialmente conocida como Conmebol Copa América, es el principal torneo internacional oficial de fútbol masculino en América del Sur. Inicialmente denominada Campeonato Sudamericano de Selecciones, adquirió su nombre actual en 1975. El torneo comenzó a jugarse en 1916 con cuatro selecciones: Argentina, Chile, Brasil y Uruguay, siendo este último el primer campeón. Durante la década del 20, se sumaron Paraguay, Bolivia y Perú.</p>
+      <p>El desarrollo del torneo fue un tanto caótico pero se fue consolidando hasta su remodelación en 1975. Después de 8 años sin competencia, el campeonato sudamericano volvió a celebrarse bajo el nombre de Copa América en 1975. Se disputaría cada cuatro años y durante 3 ediciones se disputó sin sede fija, bajo un sistema de grupos y eliminatorias a ida y vuelta. Por primera vez participaron las 10 selecciones de la Conmebol. Hasta la fecha, han participado diecinueve selecciones.</p>
+    </div>
+
+  </body>
 </html>
